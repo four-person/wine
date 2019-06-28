@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     padding: 0px;
     margin: 0px;
@@ -5,5 +6,12 @@
 
 ul,
 ol {
+=======
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+>>>>>>> b4d90047ef6ac3f399037d957e1cc89fff48ec3a
     list-style: none;
 }

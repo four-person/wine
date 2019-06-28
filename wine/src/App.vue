@@ -1,19 +1,5 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-    <p> hhahahahah</p>
- 
-  </div>
-</template>
-
-<style lang="less" scope>
-@import './common/style/index.less';
-
-#app{
-  .w(375);
-  .h(88);
-  background: @font-color-yellow;
-=======
     <Head></Head>
     <!-- <div class="ppp"></div> -->
     <input type="text" >
@@ -46,6 +32,5 @@ export default {
   //   background: blue;
   //   height: 1000px;
   // }
->>>>>>> b4d90047ef6ac3f399037d957e1cc89fff48ec3a
 }
 </style>
