@@ -1,8 +1,19 @@
 <template>
   <div class="foot">
-    <div>
-      jio
-    </div>
+    <ul class="m-nav">
+            <router-link active-class='cel' tag='li' to='/'>
+                <span>首页</span>
+            </router-link>
+            <router-link active-class='cel' tag='li' to='/Shoptype'>
+                <span>产品分类</span>
+            </router-link>
+            <router-link active-class='cel' tag='li' to='/Rank'>
+                <span>购物车</span>
+            </router-link>
+            <router-link active-class='cel' tag='li' to='/Search'>
+                <span>我的</span>
+            </router-link>
+        </ul>
   </div>
 </template>
 
@@ -27,9 +38,14 @@ export default {
   width: 100%;
   background: @bg-color-black;
   .l_h(150);
-  div{
+  ul{
+    display: flex;
+    justify-content: space-around;
     color: @font-color-white;
     .f_s(44);
+    span{
+      color:#fff;
+    }
   }
 }
 </style>

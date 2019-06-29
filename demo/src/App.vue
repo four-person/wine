@@ -1,13 +1,12 @@
 <template>
   <div id="app">
-    <Head></Head>
     <!-- <div class="ppp"></div> -->
-    <input type="text" >
+    <router-view></router-view>
     <Foot></Foot>
   </div>
 </template>
 <script>
-import Head from 'components/head'
+// import Head from 'components/head'
 import Foot from 'components/foot'
 // import Search from 'components/search'
 export default {
@@ -15,9 +14,12 @@ export default {
     // tosearch(){
     //   this.$router.push('/search')
     // }
+    // toshop(){
+    //   this.$router.push('/Shoptype')
+    // }
   },
   components:{
-    Head,Foot
+    Foot
   }
 }
 </script>
@@ -26,7 +28,7 @@ export default {
   position: fixed;
   top:0;
   bottom: 0;
-  background: #fcc;
+  // background: #fcc;
   width: 100%;
   // .ppp{
   //   background: blue;

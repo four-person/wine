@@ -21,7 +21,7 @@ module.exports = {
       .set('@', resolve('./src'))
       .set('style', resolve('./src/common/style'))
       .set('components', resolve('./src/components'))
-      .set('pages', resolve('./src/pages'))
+      .set('views', resolve('./src/views'))
       .set('utils', resolve('./src/common/utils'))
   }
 }

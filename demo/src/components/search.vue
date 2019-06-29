@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    搜索框
+    我的
   </div>
 </template>
 
