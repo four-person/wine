@@ -1,13 +1,26 @@
 <template>
 <div class="head">
-  <div class="topw">
+  
+  <div class="gundong">
+    <div class="topw">
       {{names}}
     </div>
-  <div class="gundong">
-    
     <Banner></Banner>
     <div class="shopimg" v-for="(item,index) in shopImg" :key="index">
-      <img :src="item" alt="">
+      <div class="llll">
+        <img :src="item.linkUrl" alt="">
+        <div class="wenzi">
+          <span>
+            {{item.title}}
+          </span>
+          <p>
+            {{item.price}}
+          </p>
+          <i>立即购买</i>
+        </div>
+        
+      </div>
+      
     </div>
   </div>
 </div>
@@ -20,7 +33,8 @@ export default {
   data() {
     return {
       names:'食全酒美批发商城',
-      shopImg:[]
+      shopImg:{}
+      // result:{}
     }
   },
   components:{
@@ -30,18 +44,33 @@ export default {
     initshopImg () {
       this.$axios.get('https://www.easy-mock.com/mock/5d15ffef00002508da6b174a/example/list')
       .then((res)=>{
-        // console.log(res.data.list[0].Factory) 
+        console.log(res.data) 
+        let obj = res.data
+        // console.log(obj.list[0].title)
         let olist = res.data.list.map((item) => {
-            return item.linkUrl
+            return item
           })
           this.shopImg = olist
-          // console.log(this.shopImg)
+          this.shopData(res.data.list)
       })
+    },
+    // console.log(data)
+    shopData(data){
+      for(let index=0;index<data.length;index++){
+        let dl=data[index]
+        // console.log(dl)
+        return this.result = dl
+      }
+      
     }
+    // initBs(){
+    //   this.scroll=new BS('.head')
+    // }
   },
   mounted() {
-    this.initshopImg();
-    new BS('.gundong');
+    this.initshopImg()
+    // this.shopData()
+    new BS('.head')
   },
 }
 </script>
@@ -51,26 +80,43 @@ export default {
 @import '~style/index.less';
 
 .head{
-
-  .gundong{
-    .shopimg{
-      background: blue;
-      width: 200px;
-      height: 900px;
-      img{
-        height: 50px;
-        width: 100%;
-      }
-  }
-  }
+  position: fixed;
+  .top(0);
+  .bottom(150);
+  overflow: hidden;
+  width: 100%;
   .topw{
-    color: @font-color-white;
-    background: @bg-color-black;
-    .f_s(44);
-    .padding(0,0,0,20); 
     .h(150);
+    background: @bg-color-black;
+    .l_h(150);
+    .f_s(48);
+    color: @font-color-white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
   }
-  
-
+  img{
+    width: 100%;
+  }
+  .shopimg{
+    .llll{
+      display: flex;
+      // width: 100%;
+      height: 200px;
+      border: 1px solid #fcc;
+      margin: 20px 20px 20px 20px;
+      img{
+        width: 150px;
+        height: 200px;
+        
+      }
+      .wenzi{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
 }
 </style>

@@ -44,8 +44,8 @@ export default {
 <style scoped lang="less">
 @import '~style/index.less';
 .hello{
-    .h(450);
-    width:100%;
+    .h(650);
+    // width:100%;
     img{
       width:100%;
     }
